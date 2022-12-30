@@ -107,7 +107,7 @@ namespace Beam
                 {
                     someButton.IsEnabled = true;
                     someButton.Content = "Download";
-                    OpenSite("http://steampowered.com");
+                    OpenSite("http://steampowered.com/");
                     return;
                 }
                 var url = @"http://localhost:80/BeamGames/7z.php?f=" + CurrentGameIdl + ".7z";
@@ -125,11 +125,11 @@ namespace Beam
                     cmd.StartInfo.UseShellExecute = false;
                     cmd.Start();
 
-                    cmd.StandardInput.WriteLine("set \"sevenzip=%cd%\\7zr.exe\"");
+                    cmd.StandardInput.WriteLine("set \"z=%cd%\\7zr.exe\"");
                     cmd.StandardInput.WriteLine("cd /d \"" + CurrentLibraryl + "\"");
                     cmd.StandardInput.WriteLine("mkdir " + CurrentGameIdl);
                     cmd.StandardInput.WriteLine("cd " + CurrentGameIdl);
-                    cmd.StandardInput.WriteLine("%sevenzip% e ../" + CurrentGameIdl + ".7z");
+                    cmd.StandardInput.WriteLine("%z% e ../" + CurrentGameIdl + ".7z");
                     cmd.StandardInput.Flush();
                     cmd.StandardInput.Close();
                     cmd.WaitForExit();
@@ -198,5 +198,6 @@ namespace Beam
             ((MainWindow)System.Windows.Application.Current.MainWindow).webView.Visibility = Visibility.Hidden;
             ((MainWindow)System.Windows.Application.Current.MainWindow).closeButton.Visibility = Visibility.Hidden;
         }
+        // Done with this...
     }
 }
