@@ -124,7 +124,7 @@ namespace Beam
                     cmd.StartInfo.CreateNoWindow = false;
                     cmd.StartInfo.UseShellExecute = false;
                     cmd.Start();
-
+                    cmd.StandardInput.WriteLine("@echo off");
                     cmd.StandardInput.WriteLine("set \"z=%cd%\\7zr.exe\"");
                     cmd.StandardInput.WriteLine("cd /d \"" + CurrentLibraryl + "\"");
                     cmd.StandardInput.WriteLine("mkdir " + CurrentGameIdl);
@@ -198,6 +198,6 @@ namespace Beam
             ((MainWindow)System.Windows.Application.Current.MainWindow).webView.Visibility = Visibility.Hidden;
             ((MainWindow)System.Windows.Application.Current.MainWindow).closeButton.Visibility = Visibility.Hidden;
         }
-        // Done with this...
+        // Done with this...!
     }
 }
