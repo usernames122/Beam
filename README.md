@@ -5,4 +5,4 @@ The source for the Beam Client!
 Build with VS 2022.
 
 
-Uses WPF.
+Uses WPF and WebView2.
