@@ -115,7 +115,7 @@ namespace Beam
 
                 try
                 {
-                    var handle = GetConsoleWindow();
+                    IntPtr handle = GetConsoleWindow();
                     ShowWindow(handle, SW_SHOW);
                     Process cmd = new Process();
                     cmd.StartInfo.FileName = "cmd.exe";
